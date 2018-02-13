@@ -23,6 +23,9 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("mousemove", (ev) => {
     eyeTrack(ev.clientX, ev.clientY);
   });
+  window.addEventListener("touchstart", (ev) => {
+    eyeTrack(ev.touches[0].clientX, ev.touches[0].clientY);
+  });
   window.addEventListener("touchmove", (ev) => {
     eyeTrack(ev.touches[0].clientX, ev.touches[0].clientY);
   });
