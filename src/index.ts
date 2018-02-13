@@ -6,10 +6,8 @@ document.addEventListener("DOMContentLoaded", () => {
     return $faceArea.getBoundingClientRect();
   };
   const moveEyes = (r: number, theta: number) => {
-    const defaultX = -18.6216460;
-    const defaultY = -12;
-    const dx = r * Math.cos(theta) - defaultX;
-    const dy = r * Math.sin(theta) * 1.1 - defaultY;
+    const dx = r * Math.cos(theta);
+    const dy = r * Math.sin(theta) * 1.1;
     $eye1.setAttribute("x", `${dx}`);
     $eye1.setAttribute("y", `${dy}`);
     $eye2.setAttribute("x", `${dx}`);
