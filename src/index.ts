@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const dx = mx - (left + width / 2);
     const dy = my - (top + height / 2);
     const r = Math.sqrt(dx * dx + dy * dy) / width;
-    moveEyes(10 * Math.atan(r * 5), Math.atan2(dy, dx));
+    moveEyes(25 * Math.atan(r * 2), Math.atan2(dy, dx));
   };
   window.addEventListener("mousemove", (ev) => {
     eyeTrack(ev.clientX, ev.clientY);
