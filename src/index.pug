@@ -1,6 +1,43 @@
-h1 Kurogoma (@kurgm)
-ul
-  li
-    a(href="https://github.com/kurgm") @kurgm on GitHub
-  li
-    a(href="https://twitter.com/kurgm") @kurgm on Twitter
+doctype
+html
+  head
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width,initial-scale=1")
+    title Kurogoma
+    link(href="index.css" rel="stylesheet")
+    script(src="index.ts")
+  body
+    div.desc-area
+      h1 Kurogoma (@kurgm)
+      ul
+        li
+          a(href="https://github.com/kurgm") @kurgm on GitHub
+        li
+          a(href="https://twitter.com/kurgm") @kurgm on Twitter
+
+    div.oo-area
+      svg#oo(viewBox="0 0 500 500")
+        defs
+          g#eye_white
+            path(
+              d="m 193.39303,182.10876 c -19.256,0 -53.51962,91.89124 0,91.89124 53.51962,0 19.256,-91.89124 0,-91.89124 z"
+              style="fill:#ffffff;fill-opacity:1;stroke:none"
+              transform="matrix(2.2041181,0,0,2.2041181,-265.24228,-267.28045)"
+            )
+          g#eye_black
+            path(
+              d="m 184.94446,202.99413 c -8.8125,0 -24.49325,42.05401 0,42.05401 24.49325,0 8.8125,-42.05401 0,-42.05401 z"
+              style="fill:#000000;fill-opacity:1;stroke:none"
+              transform="matrix(2.2041181,0,0,2.2041181,-265.24228,-267.28045)"
+            )
+        g
+          rect#oo_face_area(
+            x="0" y="0" width="500" height="500"
+            style="fill:none;stroke:none"
+          )
+        g
+          use(href="#eye_white" x="0" y="0" width="500" height="500")
+          use#eye_black_1(href="#eye_black" x="0" y="0" width="500" height="500")
+        g(transform="translate(177.9624,0)")
+          use(href="#eye_white" x="0" y="0" width="500" height="500")
+          use#eye_black_2(href="#eye_black" x="0" y="0" width="500" height="500")

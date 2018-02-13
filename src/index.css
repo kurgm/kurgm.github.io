@@ -1,0 +1,19 @@
+html, body {
+  margin: 0;
+}
+
+.oo-area {
+  background-color: #000;
+  text-align: center;
+}
+
+.desc-area {
+  margin: 0 1em;
+}
+
+#oo {
+  max-width: 800px;
+  max-width: 80vh;
+  display: block;
+  margin: 0 auto;
+}
