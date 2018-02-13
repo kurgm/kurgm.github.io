@@ -12,7 +12,7 @@ deploy:
   local-dir: dist
   skip-cleanup: true
   github-token: $GITHUB_TOKEN
-  keep-histroy: true
+  keep-history: true
   on:
     branch: src
 
