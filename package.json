@@ -1,0 +1,25 @@
+{
+  "name": "kurgm.github.io",
+  "version": "1.0.0",
+  "description": "kurgm.github.io",
+  "main": "index.js",
+  "scripts": {
+    "build": "parcel build src/index.pug",
+    "watch": "parcel src/index.pug",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kurgm/kurgm.github.io.git"
+  },
+  "author": "Kurogoma",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kurgm/kurgm.github.io/issues"
+  },
+  "homepage": "https://github.com/kurgm/kurgm.github.io#readme",
+  "dependencies": {
+    "parcel-bundler": "^1.5.1",
+    "parcel-plugin-pug": "^0.2.5"
+  }
+}
