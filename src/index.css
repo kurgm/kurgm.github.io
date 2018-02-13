@@ -12,8 +12,9 @@ html, body {
 }
 
 #oo {
-  max-width: 800px;
-  max-width: 80vh;
+  height: 800px;
+  height: 100vw;
+  max-height: 80vh;
   display: block;
   margin: 0 auto;
 }
