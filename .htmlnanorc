@@ -4,6 +4,11 @@
       {
         "cleanupIDs": false
       }
-    ]
+    ],
+    "floatPrecision": 5
+  },
+  "collapseWhitespace": "conservative",
+  "minifyCss": {
+    "safe": true
   }
 }
