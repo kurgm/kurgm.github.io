@@ -24,11 +24,9 @@ document.addEventListener("DOMContentLoaded", () => {
     eyeTrack(ev.clientX, ev.clientY);
   });
   window.addEventListener("touchstart", (ev) => {
-    const touchEv = ev as TouchEvent;
-    eyeTrack(touchEv.touches[0].clientX, touchEv.touches[0].clientY);
+    eyeTrack(ev.touches[0].clientX, ev.touches[0].clientY);
   });
   window.addEventListener("touchmove", (ev) => {
-    const touchEv = ev as TouchEvent;
-    eyeTrack(touchEv.touches[0].clientX, touchEv.touches[0].clientY);
+    eyeTrack(ev.touches[0].clientX, ev.touches[0].clientY);
   });
 });

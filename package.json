@@ -19,11 +19,12 @@
     "url": "https://github.com/kurgm/kurgm.github.io/issues"
   },
   "homepage": "https://github.com/kurgm/kurgm.github.io#readme",
-  "dependencies": {},
+  "dependencies": {
+  },
   "devDependencies": {
-    "parcel-bundler": "^1.7.1",
-    "pug": "^2.0.3",
+    "parcel-bundler": "^1.5.1",
+    "parcel-plugin-pug": "^0.2.5",
     "tslint": "^5.9.1",
-    "typescript": "^2.8.3"
+    "typescript": "^2.7.1"
   }
 }
