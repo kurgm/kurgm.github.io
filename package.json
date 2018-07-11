@@ -21,9 +21,9 @@
   "homepage": "https://github.com/kurgm/kurgm.github.io#readme",
   "dependencies": {},
   "devDependencies": {
-    "parcel-bundler": "1.5.1",
-    "parcel-plugin-pug": "^0.3.1",
-    "tslint": "^5.9.1",
-    "typescript": "^2.8.3"
+    "parcel-bundler": "^1.9.4",
+    "pug": "^2.0.3",
+    "tslint": "^5.10.0",
+    "typescript": "^2.9.2"
   }
 }
