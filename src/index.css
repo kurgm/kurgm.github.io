@@ -18,3 +18,19 @@ html, body {
   display: block;
   margin: 0 auto;
 }
+
+#eye_black {
+  transform-origin: 50% 55%;
+  transform-box: fill-box;
+  transform: none;
+}
+.rot-clock {
+  animation: eye_rotate 0.75s linear infinite;
+}
+.rot-anticlock {
+  animation: eye_rotate 0.75s linear infinite reverse;
+}
+@keyframes eye_rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
