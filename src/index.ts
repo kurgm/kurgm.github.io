@@ -1,7 +1,7 @@
 {
     const makeDizzyTrack = (callback: (sign: -1 | 0 | 1) => void) => {
         const SCORE_CNT = 4;
-        const SCORE_THRESH = 15;
+        const SCORE_THRESH = 11;
         const SCORE_K = 20;
 
         let nextScore = 0;
@@ -23,7 +23,7 @@
                 callback(0);
             }
         };
-        setInterval(tick, 1000);
+        setInterval(tick, 750);
 
         return (x: number, y: number) => {
             const kxy1 = SCORE_K * Math.sqrt(SCORE_K ** 2 * (x ** 2 + y ** 2) + 1);
