@@ -1,48 +1,40 @@
 {
-    class EyeDizzier {
-        private static readonly SCORE_CNT = 4;
-        private static readonly SCORE_THRESH = 15;
-        private static readonly SCORE_K = 20;
-        private nextScore = 0;
-        private scores: number[] = [];
-        private prevX = 0;
-        private prevY = 0;
-        private $eye: SVGElement;
+    const makeDizzyTrack = (callback: (sign: -1 | 0 | 1) => void) => {
+        const SCORE_CNT = 4;
+        const SCORE_THRESH = 15;
+        const SCORE_K = 20;
 
-        public constructor($eye: SVGElement) {
-            this.$eye = $eye;
-            setInterval(() => {
-                this.tick();
-            }, 1000);
-        }
+        let nextScore = 0;
+        const scores: number[] = [];
+        let prevX = 0;
+        let prevY = 0;
 
-        private tick() {
-            this.scores.push(this.nextScore);
-            this.nextScore = 0;
-            if (this.scores.length > EyeDizzier.SCORE_CNT) {
-                this.scores = this.scores.slice(-EyeDizzier.SCORE_CNT);
+        const tick = () => {
+            scores.push(nextScore);
+            nextScore = 0;
+            while (scores.length > SCORE_CNT) {
+                scores.shift();
             }
 
-            const score = this.scores.reduce((a, b) => a + b, 0);
-            let className = "";
-            if (Math.abs(score) >= EyeDizzier.SCORE_THRESH) {
-                className = (score < 0) ? "rot-anticlock" : "rot-clock";
+            const score = scores.reduce((a, b) => a + b, 0);
+            if (Math.abs(score) >= SCORE_THRESH) {
+                callback(score > 0 ? 1 : -1);
+            } else {
+                callback(0);
             }
-            if (this.$eye.getAttribute("class") !== className) {
-                this.$eye.setAttribute("class", className);
-            }
-        }
+        };
+        setInterval(tick, 1000);
 
-        public moveTo(x: number, y: number) {
-            const kxy1 = EyeDizzier.SCORE_K * Math.sqrt(EyeDizzier.SCORE_K ** 2 * (x ** 2 + y ** 2) + 1);
-            const p = -Math.log(kxy1 + EyeDizzier.SCORE_K ** 2 * y);
-            const q = Math.log(kxy1 + EyeDizzier.SCORE_K ** 2 * x);
-            const dx = x - this.prevX;
-            const dy = y - this.prevY;
-            this.nextScore += p * dx + q * dy;
-            this.prevX = x;
-            this.prevY = y;
-        }
+        return (x: number, y: number) => {
+            const kxy1 = SCORE_K * Math.sqrt(SCORE_K ** 2 * (x ** 2 + y ** 2) + 1);
+            const p = -Math.log(kxy1 + SCORE_K ** 2 * y);
+            const q = Math.log(kxy1 + SCORE_K ** 2 * x);
+            const dx = x - prevX;
+            const dy = y - prevY;
+            nextScore += p * dx + q * dy;
+            prevX = x;
+            prevY = y;
+        };
     }
     document.addEventListener("DOMContentLoaded", () => {
         const $faceArea = document.getElementById("oo_face_area")!;
@@ -58,14 +50,19 @@
             $eye2.setAttribute("y", `${dy}`);
         };
         const $eye0 = document.getElementById("eye_black")! as Element as SVGElement;
-        const dizzier = new EyeDizzier($eye0);
+        const dizzyTrack = makeDizzyTrack((sign) => {
+            const className = sign === 0 ? "" : sign > 0 ? "rot-clock" : "rot-anticlock";
+            if ($eye0.getAttribute("class") !== className) {
+                $eye0.setAttribute("class", className);
+            }
+        });
         const eyeTrack = (mx: number, my: number) => {
-            const {left, top, width, height} = getOOArea();
+            const { left, top, width, height } = getOOArea();
             const dx = mx - (left + width / 2);
             const dy = my - (top + height / 2);
             const r = Math.sqrt(dx * dx + dy * dy) / width;
             moveEyes(25 * Math.atan(r * 2), Math.atan2(dy, dx));
-            dizzier.moveTo(dx / width, dy / height);
+            dizzyTrack(dx / width, dy / height);
         };
         window.addEventListener("mousemove", (ev) => {
             eyeTrack(ev.clientX, ev.clientY);
