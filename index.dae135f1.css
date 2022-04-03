@@ -1,2 +1,0 @@
-body,html{margin:0}.oo-area{background-color:#000;text-align:center}.desc-area{margin:0 1em}#oo{display:block;height:800px;height:100vw;margin:0 auto;max-height:100vh}#eye_black{transform:none;transform-box:fill-box;transform-origin:50% 55%}.rot-clock{animation:eye_rotate .75s linear infinite}.rot-anticlock{animation:eye_rotate .75s linear infinite reverse}@keyframes eye_rotate{0%{transform:rotate(0deg)}to{transform:rotate(1turn)}}
-/*# sourceMappingURL=index.dae135f1.css.map */
