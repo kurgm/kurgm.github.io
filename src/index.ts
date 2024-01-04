@@ -78,4 +78,18 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("touchmove", (ev) => {
     eyeTrack(ev.touches[0].clientX, ev.touches[0].clientY);
   });
+
+  const $ooArea = document.getElementsByClassName("oo-area")[0];
+  const $fullscreenButton = document.getElementById("btn_fullscreen")!;
+  if (document.fullscreenEnabled) {
+    $fullscreenButton.addEventListener("click", () => {
+      if (document.fullscreenElement) {
+        void document.exitFullscreen();
+        return;
+      }
+      void $ooArea.requestFullscreen();
+    });
+  } else {
+    $fullscreenButton.style.display = "none";
+  }
 });

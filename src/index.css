@@ -3,21 +3,55 @@ body {
   margin: 0;
 }
 
+.desc-area {
+  margin: 1em;
+}
+
 .oo-area {
+  position: relative;
+  display: flex;
+  flex-direction: column;
   background-color: #000;
   text-align: center;
 }
 
-.desc-area {
-  margin: 0 1em;
+.oo-control {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  transition: opacity 0.15s ease-in-out;
+}
+:fullscreen .oo-control:not(:hover) {
+  opacity: 0;
+}
+.oo-control button {
+  padding: 0.25em;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  background-color: transparent;
+  color: #fff;
+  opacity: 0.75;
+}
+.oo-control button:hover {
+  opacity: 1;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.oo-control button svg {
+  display: block;
+  width: 1.8em;
+  height: 1.8em;
+  fill: currentColor;
 }
 
 #oo {
   height: 800px;
   height: 100vw;
+  max-width: 100%;
   max-height: 100vh;
   display: block;
-  margin: 0 auto;
+  margin: auto;
 }
 
 #eye_black {
@@ -31,6 +65,7 @@ body {
 .rot-anticlock {
   animation: eye_rotate 0.75s linear infinite reverse;
 }
+
 @keyframes eye_rotate {
   from {
     transform: rotate(0deg);
