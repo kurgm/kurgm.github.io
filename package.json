@@ -23,8 +23,8 @@
   "devDependencies": {
     "@parcel/transformer-pug": "^2.2.1",
     "@prettier/plugin-pug": "^3.0.0",
-    "@typescript-eslint/eslint-plugin": "^6.17.0",
-    "@typescript-eslint/parser": "^6.17.0",
+    "@typescript-eslint/eslint-plugin": "^7.16.1",
+    "@typescript-eslint/parser": "^7.16.1",
     "eslint": "^8.8.0",
     "eslint-config-prettier": "^9.1.0",
     "parcel": "^2.2.1",

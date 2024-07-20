@@ -41,7 +41,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const getOOArea = () => $faceArea.getBoundingClientRect();
 
   const $oo = document.getElementById("oo")! as Element as SVGSVGElement;
+  // eslint-disable-next-line @typescript-eslint/no-unnecessary-type-assertion
   const $eye1 = $oo.getElementById("eye_black_1")! as SVGUseElement;
+  // eslint-disable-next-line @typescript-eslint/no-unnecessary-type-assertion
   const $eye2 = $oo.getElementById("eye_black_2")! as SVGUseElement;
   const moveEyes = (r: number, theta: number) => {
     const dx = r * Math.cos(theta);
@@ -52,6 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
     $eye2.setAttribute("y", `${dy}`);
   };
 
+  // eslint-disable-next-line @typescript-eslint/no-unnecessary-type-assertion
   const $eye0 = $oo.getElementById("eye_black")! as SVGElement;
   const dizzyTrack = makeDizzyTrack((sign) => {
     const className =
