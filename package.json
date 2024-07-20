@@ -29,7 +29,7 @@
     "eslint-config-prettier": "^9.1.0",
     "parcel": "^2.2.1",
     "parcel-namer-rewrite": "^2.10.3-rc.2",
-    "prettier": "3.1.1",
+    "prettier": "3.3.3",
     "typescript": "^5.3.3",
     "typescript-eslint": "^7.16.1"
   },
