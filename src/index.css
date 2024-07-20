@@ -7,6 +7,35 @@ body {
   margin: 1em;
 }
 
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em 4em;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1.3em 0;
+}
+
+.header > h1 {
+  margin: 0;
+}
+
+.header > ul.social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+}
+
+.header > ul.social > li {
+  list-style: none;
+}
+
+.header > ul.social img {
+  display: block;
+}
+
 .oo-area {
   position: relative;
   display: flex;

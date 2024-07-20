@@ -16,12 +16,15 @@ html(lang="en")
     script(src="index.ts")
   body
     .desc-area
-      h1 Kurogoma (@kurgm)
-      ul
-        li
-          a(href="https://github.com/kurgm") @kurgm on GitHub
-        li
-          a(href="https://twitter.com/kurgm") @kurgm on Twitter
+      .header
+        h1 Kurogoma (@kurgm)
+        ul.social
+          li
+            a(href="https://github.com/kurgm")
+              img(alt="GitHub: @kurgm", src="https://img.shields.io/badge/GitHub-kurgm-181717?logo=github")
+          li
+            a(href="https://x.com/kurgm")
+              img(alt="X: @kurgm", src="https://img.shields.io/badge/X-kurgm-000")
 
     .oo-area
       svg#oo(viewBox="0 0 500 500", xmlns:xlink="http://www.w3.org/1999/xlink")
